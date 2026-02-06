@@ -22,4 +22,8 @@ public class HomePage extends BasePage {
     public void clickBtnLogin(){
         btnLogin.click();
     }
+
+    public void clickBtnSignUp(){
+        btnSignUp.click();
+    }
 }
