@@ -23,7 +23,6 @@ public class RegistrationTests_negatives extends AppManager {
 
     @Test
     public void registrationNegativeTest_WithPopUpPage() {
-        int i = new Random().nextInt(1000);
         User user = User.builder()
                 .firstName("Victor")
                 .lastName("Victorov")
