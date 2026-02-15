@@ -10,8 +10,6 @@ import pages.HomePage;
 import pages.PopUpPage;
 import pages.RegistrationPage;
 
-import java.util.Random;
-
 public class RegistrationTests_negatives extends AppManager {
     RegistrationPage registrationPage;
     SoftAssert softAssert = new SoftAssert();
@@ -92,6 +90,51 @@ public class RegistrationTests_negatives extends AppManager {
                 "validate error message: Password is required");
         softAssert.assertAll();
     }
+
+    @Test
+    public void registrationNegativeTest_WithEmptyCheckBox() {
+        User user = User.builder()
+                .firstName("Victor")
+                .lastName("Victorov")
+                .email("victor444@smd.com")
+                .password("Password123#")
+                .build();
+        registrationPage.typeRegistrationForm(user);
+        registrationPage.clickBtnYalla();
+        softAssert.assertAll();
+    }
+
+    @Test
+    public void registrationNegativeTest_WithEmptyLastName() {
+        User user = User.builder()
+                .firstName("Victor")
+                .lastName("")
+                .email("victor444@smd.com")
+                .password("Password123#")
+                .build();
+        registrationPage.typeRegistrationForm(user);
+        registrationPage.clickCheckBoxWithActions();
+        registrationPage.clickBtnYalla();
+        softAssert.assertTrue(registrationPage.isTextInErrorPresent("Last name is required"));
+        softAssert.assertAll();
+
+    }
+    // при незаполнении других 3х полей в регистрации - результат аналогичен как с EmptyLastName (тест проходит)
+
+    @Test
+    public void registrationNegativeTest_WithDigitInName() {
+        User user = User.builder()
+                .firstName("8")
+                .lastName("Victorov")
+                .email("victor4445@smd.com")
+                .password("Password1234!")
+                .build();
+        registrationPage.typeRegistrationForm(user);
+        registrationPage.clickCheckBoxWithActions();
+        registrationPage.clickBtnYalla();
+        softAssert.assertAll();
+    }
 }
+
 
 
