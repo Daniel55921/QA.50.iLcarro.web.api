@@ -15,8 +15,8 @@ public class LoginTests_positives extends AppManager {
     @Test
     public void loginPositiveTest() {
         User user = User.builder()
-                .email("sima_simonova370@gmail.com")
-                .password("BSas124!")
+                .email("victor444@smd.com")
+                .password("Password123#")
                 .build();
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin();
@@ -29,8 +29,8 @@ public class LoginTests_positives extends AppManager {
     @Test
     public void loginPositiveTest_WithPopUpPage() {
         User user = User.builder()
-                .email("sima_simonova370@gmail.com")
-                .password("BSas124!")
+                .email("victor444@smd.com")
+                .password("Password123#")
                 .build();
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin();
