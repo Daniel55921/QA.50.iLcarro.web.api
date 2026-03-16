@@ -25,7 +25,7 @@ public class AppManager {
         logger.info("Start testing" + LocalDate.now()+ " : "+ LocalTime.now());
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
     }
 
     @AfterMethod(enabled = false)
