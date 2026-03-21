@@ -15,6 +15,36 @@ public class LoginTests_negatives extends AppManager {
     SoftAssert softAssert = new SoftAssert();
 
     @Test
+    public void loginNegativeTest_WrongPassword_WithoutBigEnglishLetter() {
+        User user = User.builder()
+                .email(getProperty("base.properties","login"))
+                .password("bsasss1@")
+                .build();
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickBtnLogin();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.typeLoginForm(user);
+        loginPage.clickBtnYalla();
+        Assert.assertTrue(new PopUpPage(getDriver())
+                .isTextInPopUpMessagePresent("Login or Password incorrect"));
+    }
+
+    @Test
+    public void loginNegativeTest_WrongPassword_WithoutSmallEnglishLetter() {
+        User user = User.builder()
+                .email(getProperty("base.properties","login"))
+                .password("BSASSS1@")
+                .build();
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickBtnLogin();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.typeLoginForm(user);
+        loginPage.clickBtnYalla();
+        Assert.assertTrue(new PopUpPage(getDriver())
+                .isTextInPopUpMessagePresent("Login or Password incorrect"));
+    }
+
+    @Test
     public void loginNegativeTest_WrongPassword_WOSpecSymbol() {
         User user = User.builder()
                 .email(getProperty("base.properties","login"))
@@ -28,6 +58,38 @@ public class LoginTests_negatives extends AppManager {
         Assert.assertTrue(new PopUpPage(getDriver())
                 .isTextInPopUpMessagePresent("Login or Password incorrect"));
     }
+
+    @Test
+    public void loginNegativeTest_WrongPassword_WithoutDigit() {
+        User user = User.builder()
+                .email(getProperty("base.properties","login"))
+                .password("BSassss!")
+                .build();
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickBtnLogin();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.typeLoginForm(user);
+        loginPage.clickBtnYalla();
+        Assert.assertTrue(new PopUpPage(getDriver())
+                .isTextInPopUpMessagePresent("Login or Password incorrect"));
+    }
+
+    @Test
+    public void loginNegativeTest_WrongPassword_WithoutLenghLessThan8Characters() {
+        User user = User.builder()
+                .email(getProperty("base.properties","login"))
+                .password("Bsa1#")
+                .build();
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickBtnLogin();
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.typeLoginForm(user);
+        loginPage.clickBtnYalla();
+        Assert.assertTrue(new PopUpPage(getDriver())
+                .isTextInPopUpMessagePresent("Login or Password incorrect"));
+    }
+
+    // ADDITION TESTS
 
     @Test
     public void loginNegativeTest_WrongEmail_Empty() {
@@ -50,70 +112,10 @@ public class LoginTests_negatives extends AppManager {
     }
 
     @Test
-    public void loginNegativeTest_WrongPassword_WithoutDigit() {
-        User user = User.builder()
-                .email(getProperty("base.properties","login"))
-                .password("BSasssss")
-                .build();
-        HomePage homePage = new HomePage(getDriver());
-        homePage.clickBtnLogin();
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.typeLoginForm(user);
-        loginPage.clickBtnYalla();
-        Assert.assertTrue(new PopUpPage(getDriver())
-                .isTextInPopUpMessagePresent("Login or Password incorrect"));
-    }
-
-    @Test
-    public void loginNegativeTest_WrongPassword_WithoutSmallEnglishLetter() {
-        User user = User.builder()
-                .email(getProperty("base.properties","login"))
-                .password("BSASSSS1")
-                .build();
-        HomePage homePage = new HomePage(getDriver());
-        homePage.clickBtnLogin();
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.typeLoginForm(user);
-        loginPage.clickBtnYalla();
-        Assert.assertTrue(new PopUpPage(getDriver())
-                .isTextInPopUpMessagePresent("Login or Password incorrect"));
-    }
-
-    @Test
-    public void loginNegativeTest_WrongPassword_WithoutBigEnglishLetter() {
-        User user = User.builder()
-                .email(getProperty("base.properties","login"))
-                .password("bsassss1")
-                .build();
-        HomePage homePage = new HomePage(getDriver());
-        homePage.clickBtnLogin();
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.typeLoginForm(user);
-        loginPage.clickBtnYalla();
-        Assert.assertTrue(new PopUpPage(getDriver())
-                .isTextInPopUpMessagePresent("Login or Password incorrect"));
-    }
-
-    @Test
     public void loginNegativeTest_WrongPassword_WithoutSpecialCharacter() {
         User user = User.builder()
                 .email(getProperty("base.properties","login"))
                 .password("Bsassss")
-                .build();
-        HomePage homePage = new HomePage(getDriver());
-        homePage.clickBtnLogin();
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.typeLoginForm(user);
-        loginPage.clickBtnYalla();
-        Assert.assertTrue(new PopUpPage(getDriver())
-                .isTextInPopUpMessagePresent("Login or Password incorrect"));
-    }
-
-    @Test
-    public void loginNegativeTest_WrongPassword_WithoutLenghLessThan8Characters() {
-        User user = User.builder()
-                .email(getProperty("base.properties","login"))
-                .password("Bsa1")
                 .build();
         HomePage homePage = new HomePage(getDriver());
         homePage.clickBtnLogin();

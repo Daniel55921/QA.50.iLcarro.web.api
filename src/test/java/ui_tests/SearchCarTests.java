@@ -17,7 +17,7 @@ public class SearchCarTests extends AppManager {
     @Test
     public void searchCarPositiveTest(){
         String city = "Rehovot";
-        LocalDate startDate = LocalDate.of(2026,3,12);
+        LocalDate startDate = LocalDate.of(2026,3,21);
         LocalDate endDate = LocalDate.of(2026,3,22);
         homePage.typeSearchForm(city, startDate, endDate);
     }
