@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,6 +31,8 @@ public class HomePage extends BasePage {
     WebElement inputDates;
     @FindBy(xpath = "//button[@type='submit']")
     WebElement btnYalla;
+    @FindBy(xpath = "//button[@aria-label='Choose month and year']")
+    WebElement btnYearCalendar;
 
     public void clickBtnLogin(){
         btnLogin.click();
@@ -49,6 +53,42 @@ public class HomePage extends BasePage {
                 + endDate.getDayOfMonth()+"/"
                 + endDate.getYear();
         inputDates.sendKeys(dates);
-        btnYalla.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector(\"button[type='submit']\")" +
+                ".removeAttribute(\"disabled\")");
+        //btnYalla.click();
+    }
+
+    public void clickBtnYalla(){
+        clickWait(btnYalla, 3);
+    }
+
+    public void typeSearchFormWOJS(String city,
+                               LocalDate startDate, LocalDate endDate) {
+        inputCity.sendKeys(city);
+        System.out.println(startDate.toString());
+        String dates = startDate.getMonthValue()+"/"
+                + startDate.getDayOfMonth()+"/"
+                + startDate.getYear()+" - "
+                + endDate.getMonthValue()+"/"
+                + endDate.getDayOfMonth()+"/"
+                + endDate.getYear();
+        inputDates.sendKeys(dates);
+    }
+
+    private void typeCalendar(LocalDate date){
+        btnYearCalendar.click();
+        //td[@aria-label='2026']
+        String year = Integer.toString(date.getYear());
+        WebElement btnYear = driver.findElement(By.
+                xpath("td[@aria-label='"+year+"']"));
+        btnYear.click();
+    }
+
+    public void typeSearchFormWithCalendar
+            (String city, LocalDate startDate, LocalDate endDate){
+        inputCity.sendKeys(city);
+        inputDates.click();
+        typeCalendar(startDate);
     }
 }
