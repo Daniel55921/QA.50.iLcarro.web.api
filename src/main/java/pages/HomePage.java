@@ -91,4 +91,15 @@ public class HomePage extends BasePage {
         inputDates.click();
         typeCalendar(startDate);
     }
+
+    public boolean isTextInErrorPresent(String text) {
+        try {
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(5))
+                    .until(org.openqa.selenium.support.ui.ExpectedConditions
+                            .presenceOfElementLocated(org.openqa.selenium.By.xpath("//*[contains(text(), '" + text.trim() + "')]")));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
