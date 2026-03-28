@@ -83,12 +83,14 @@ public class HomePage extends BasePage {
         WebElement btnYear = driver.findElement(By.
                 xpath("td[@aria-label='"+year+"']"));
         btnYear.click();
+        //td[@aria-label='April 2026']
     }
 
     public void typeSearchFormWithCalendar
             (String city, LocalDate startDate, LocalDate endDate){
         inputCity.sendKeys(city);
         inputDates.click();
+        System.out.println(startDate.getMonth());
         typeCalendar(startDate);
     }
 
