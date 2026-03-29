@@ -1,0 +1,30 @@
+21:21:03.805 [Test worker] INFO  utils.TestNGListener - Information of start test: Sun Mar 29 21:21:03 IDT 2026
+21:21:03.853 [Test worker] INFO  manager.AppManager - Start testing2026-03-29 : 21:21:03.853152
+21:21:08.634 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] start test -->searchCarNegativeTest_DateNotValid
+21:21:08.651 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] success test -->searchCarNegativeTest_DateNotValid
+21:21:08.656 [Test worker] INFO  manager.AppManager - Stop testing2026-03-29 : 21:21:08.656900300
+21:21:08.951 [Test worker] INFO  manager.AppManager - Start testing2026-03-29 : 21:21:08.951632500
+21:21:12.662 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] start test -->searchCarNegativeTest_EmptyFieldCity
+21:21:17.034 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] success test -->searchCarNegativeTest_EmptyFieldCity
+21:21:17.042 [Test worker] INFO  manager.AppManager - Stop testing2026-03-29 : 21:21:17.042530300
+21:21:17.375 [Test worker] INFO  manager.AppManager - Start testing2026-03-29 : 21:21:17.375094900
+21:21:21.195 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] start test -->searchCarNegativeTest_EmptyFieldCityValidateError
+21:21:21.777 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] success test -->searchCarNegativeTest_EmptyFieldCityValidateError
+21:21:21.784 [Test worker] INFO  manager.AppManager - Stop testing2026-03-29 : 21:21:21.784452300
+21:21:21.998 [Test worker] INFO  manager.AppManager - Start testing2026-03-29 : 21:21:21.998448100
+21:21:25.720 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] start test -->searchCarNegativeTest_EqualData
+21:21:26.592 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] success test -->searchCarNegativeTest_EqualData
+21:21:26.601 [Test worker] INFO  manager.AppManager - Stop testing2026-03-29 : 21:21:26.601591400
+21:21:26.886 [Test worker] INFO  manager.AppManager - Start testing2026-03-29 : 21:21:26.886798200
+21:21:30.501 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] start test -->searchCarNegativeTest_StartDate_AfterEndDate
+21:21:31.569 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] success test -->searchCarNegativeTest_StartDate_AfterEndDate
+21:21:31.571 [Test worker] INFO  manager.AppManager - Stop testing2026-03-29 : 21:21:31.571094600
+21:21:31.844 [Test worker] INFO  manager.AppManager - Start testing2026-03-29 : 21:21:31.844964200
+21:21:35.529 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] start test -->searchCarNegativeTest_WrongFirstData
+21:21:36.634 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] success test -->searchCarNegativeTest_WrongFirstData
+21:21:36.637 [Test worker] INFO  manager.AppManager - Stop testing2026-03-29 : 21:21:36.637903700
+21:21:36.929 [Test worker] INFO  manager.AppManager - Start testing2026-03-29 : 21:21:36.929091
+21:21:40.916 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] start test -->searchCarNegativeTest_WrongSecondData
+21:21:42.138 [Test worker] INFO  utils.TestNGListener - [TestClass name=class ui_tests.SearchCarTests_negatives] success test -->searchCarNegativeTest_WrongSecondData
+21:21:42.138 [Test worker] INFO  manager.AppManager - Stop testing2026-03-29 : 21:21:42.138258100
+21:21:42.420 [Test worker] INFO  utils.TestNGListener - Information of finish test: Sun Mar 29 21:21:42 IDT 2026

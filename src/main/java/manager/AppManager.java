@@ -28,7 +28,7 @@ public class AppManager {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
     }
 
-    @AfterMethod(enabled = false)
+    @AfterMethod(enabled = true)
     public void tearDown(){
         logger.info("Stop testing" + LocalDate.now()+ " : "+ LocalTime.now());
         if(driver!= null)
