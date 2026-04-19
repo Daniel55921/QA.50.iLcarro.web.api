@@ -35,7 +35,7 @@ public class SearchCarTests_positives extends AppManager {
     public void searchCarPositiveTestWithCalendar(){
         String city = "Rehovot";
         LocalDate startDate = LocalDate.now();
-        LocalDate endDate = LocalDate.of(2026,3,31);
+        LocalDate endDate = startDate.plusDays(2);
         homePage.typeSearchFormWithCalendar(city, startDate, endDate);
         //homePage.clickBtnYalla();
         //Assert.assertTrue(homePage.urlContains
