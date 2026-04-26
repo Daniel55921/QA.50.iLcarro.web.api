@@ -7,8 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.PropertiesReader;
+import utils.enums.FooterMenuItem;
+import utils.enums.HeaderMenuItem;
 
+import java.time.Duration;
 import java.time.LocalDate;
 
 import static utils.PropertiesReader.*;
@@ -100,6 +105,26 @@ public class HomePage extends BasePage {
                     .until(org.openqa.selenium.support.ui.ExpectedConditions
                             .presenceOfElementLocated(org.openqa.selenium.By.xpath("//*[contains(text(), '" + text.trim() + "')]")));
             return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean clickIconFooter(FooterMenuItem item, String title){
+        driver.findElement(By.xpath(item.getLocator())).click();
+        return new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.titleContains(title));
+    }
+
+    public boolean clickHeaderItemAndCheckURL(HeaderMenuItem item, String expectedUrlPart) {
+        driver.findElement(By.xpath(item.getLocator())).click();
+        return new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.urlContains(expectedUrlPart));
+    }
+
+    public boolean isHeaderMenuItemPresent(HeaderMenuItem item) {
+        try {
+            return driver.findElement(By.xpath(item.getLocator())).isDisplayed();
         } catch (Exception e) {
             return false;
         }

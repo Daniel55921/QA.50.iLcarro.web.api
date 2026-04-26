@@ -19,6 +19,7 @@ public class AppManager {
     public final static Logger logger =
             LoggerFactory.getLogger(AppManager.class);
     private WebDriver driver;
+
     public WebDriver getDriver() {
         return driver;
     }
